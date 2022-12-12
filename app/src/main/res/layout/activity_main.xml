@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="8dp">
+
+    <SearchView
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"/>
+
+    <ImageView
+        android:id="@+id/hero"
+        android:layout_width="wrap_content"
+        android:layout_height="256dp"
+        android:layout_below="@+id/search_bar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/hero" />
+
+    <Button
+        android:id="@+id/button_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/hero" />
+    <Button
+        android:id="@+id/button_man"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Man"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/hero"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:id="@+id/button_women"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Woman"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/hero"
+        android:layout_alignParentRight="true"/>
+
+
+
+</RelativeLayout>
