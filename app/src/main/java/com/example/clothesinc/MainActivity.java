@@ -3,6 +3,7 @@ package com.example.clothesinc;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -35,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.transaction:
                 return true;
             case R.id.shop:
-                return true;
+                Intent shopActivity = new Intent(MainActivity.this, ShopActivity.class);
+                startActivity(shopActivity);
+                break;
             case R.id.settings:
                 return true;
         }

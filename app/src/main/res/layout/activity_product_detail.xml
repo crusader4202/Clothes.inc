@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#BDD3D3"
-        android:src="@drawable/RedShirts"></ImageView>
+        android:src="@drawable/red_shirts"></ImageView>
 
     <TextView
         android:id="@+id/productName"
@@ -42,23 +42,23 @@
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/Star"></ImageView>
+            android:src="@drawable/star"></ImageView>
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/Star"></ImageView>
+            android:src="@drawable/star"></ImageView>
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/Star"></ImageView>
+            android:src="@drawable/star"></ImageView>
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/Star"></ImageView>
+            android:src="@drawable/star"></ImageView>
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/Star"></ImageView>
+            android:src="@drawable/star"></ImageView>
 
         <TextView
             android:layout_width="wrap_content"
@@ -84,6 +84,6 @@
         android:layout_height="wrap_content"
         android:text="Add To Cart"
         android:layout_marginTop="15dp"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"></Button>
 
 </LinearLayout>
