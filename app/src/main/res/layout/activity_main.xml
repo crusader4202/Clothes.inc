@@ -14,37 +14,47 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="16dp"/>
 
-    <ImageView
-        android:id="@+id/hero"
-        android:layout_width="wrap_content"
-        android:layout_height="256dp"
+<!--    <ImageView-->
+<!--        android:id="@+id/hero"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="256dp"-->
+<!--        android:layout_below="@+id/search_bar"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:src="@drawable/hero" />-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewImageSlider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/search_bar"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/hero" />
+        />
 
     <Button
         android:id="@+id/button_all"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="All"
+        android:onClick="categoryAll"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/hero" />
+        android:layout_below="@+id/recyclerViewImageSlider" />
     <Button
         android:id="@+id/button_man"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Man"
+        android:onClick="categoryMan"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/hero"
+        android:layout_below="@+id/recyclerViewImageSlider"
         android:layout_centerHorizontal="true"/>
     <Button
         android:id="@+id/button_women"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Woman"
+        android:onClick="categoryWoman"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/hero"
+        android:layout_below="@+id/recyclerViewImageSlider"
         android:layout_alignParentRight="true"/>
 
     <androidx.cardview.widget.CardView
@@ -57,45 +67,43 @@
         >
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="167dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="10dp"
-            >
+            android:padding="10dp">
 
             <ImageView
                 android:id="@+id/productImage"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/red_shirts">
-            </ImageView>
+                android:src="@drawable/red_shirts"></ImageView>
 
             <TextView
                 android:id="@+id/productName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="25dp"
+                android:text="Red Shirts"
                 android:textColor="@color/black"
-                android:text="Red Shirts"></TextView>
+                android:textSize="25dp"></TextView>
 
             <TextView
                 android:id="@+id/productBrand"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:text="ERIGO"
                 android:textColor="@color/black"
                 android:textSize="25dp"
-                android:text="ERIGO"></TextView>
+                android:textStyle="bold"></TextView>
 
             <TextView
                 android:id="@+id/productPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:text="Rp 100.000"
                 android:textColor="@color/black"
                 android:textSize="25dp"
-                android:text="Rp 100.000"></TextView>
+                android:textStyle="bold"></TextView>
 
         </LinearLayout>
 
@@ -155,7 +163,6 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
 
 
 </RelativeLayout>
