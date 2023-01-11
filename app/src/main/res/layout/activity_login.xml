@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".login">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/brandTitle"
+        android:text="Clothes .inc"
+        android:textSize="35dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:paddingTop="35dp"
+        android:layout_margin="10dp"></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signInTitle"
+        android:text="SIGN IN"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:paddingTop="120dp"
+        android:layout_margin="15dp"></TextView>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/username"
+        android:layout_below="@id/signInTitle"
+        android:hint="Username"
+        android:background="@drawable/rounded_background"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:padding="20dp"
+        android:drawableLeft="@drawable/username_logo"
+        android:drawablePadding="20dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/password"
+        android:layout_below="@id/username"
+        android:hint="Password"
+        android:background="@drawable/rounded_background"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:padding="20dp"
+        android:drawableLeft="@drawable/password_logo"
+        android:drawablePadding="20dp"
+        android:inputType="textPassword"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/signInButton"
+        android:text="SIGN IN"
+        android:textSize="20dp"
+        android:layout_below="@id/password"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#22A39F"
+        android:layout_margin="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/haveAccount"
+        android:text="Don't have an account?"
+        android:layout_below="@id/signInButton"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:paddingTop="45dp"
+        android:gravity="center"></TextView>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/registerButton"
+        android:text="REGISTER"
+        android:textSize="20dp"
+        android:layout_below="@id/haveAccount"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#22A39F"
+        android:layout_margin="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/orBorder"
+        android:text="------------------------ OR ------------------------"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_below="@id/registerButton"
+        android:layout_margin="10dp"
+        android:gravity="center"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/orBorder"
+        android:gravity="center">
+        
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/facebook_logo"/>
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/google_logo"/>
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/line_logo"/>
+    </LinearLayout>
+
+</RelativeLayout>
