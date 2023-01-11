@@ -22,13 +22,14 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Username = (EditText) findViewById(R.id.username);
-        Password = (EditText) findViewById(R.id.password);
+        Username = (EditText) findViewById(R.id.loginUsername);
+        Password = (EditText) findViewById(R.id.loginPassword);
         Login = (Button) findViewById(R.id.signInButton);
         Register = (Button) findViewById(R.id.registerButton);
 
         Intent intent = getIntent();
         user = intent.getParcelableArrayListExtra("myData");
+
         Login.setOnClickListener(this);
         Register.setOnClickListener(this);
     }
@@ -50,7 +51,7 @@ public class login extends AppCompatActivity implements View.OnClickListener {
             String UserPassword = user.get(idx).getPassword();
             String UserName = user.get(idx).getUsername();
             if(valUsername.equals(UserName) && valPassword.equals(UserPassword)){
-                Intent intent = new Intent(login.this, signUp.class);
+                Intent intent = new Intent(login.this, MainActivity.class);
                 startActivity(intent);
             }
         }

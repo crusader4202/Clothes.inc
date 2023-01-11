@@ -23,33 +23,38 @@ public class signUp extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        Username2 = (EditText) findViewById(R.id.username);
-        Password2 = (EditText) findViewById(R.id.password);
+        Username2 = (EditText) findViewById(R.id.registerUsername);
+        Password2 = (EditText) findViewById(R.id.registerPassword);
         Login = (Button) findViewById(R.id.loginButton);
         SignUp = (Button) findViewById(R.id.signUpButton);
+
+        SignUp.setOnClickListener(this);
     }
 
+    @Override
+    public void onClick(View v) {
+        if(v.getId() == R.id.signUpButton){
+            register();
+        }
 
+        if (v.getId() == R.id.loginButton){
+            Intent intent = new Intent(signUp.this, login.class);
+            startActivity(intent);
+        }
+    }
 
     private void Save (String Username, String Password){
         user.add(new User(Username, Password));
     }
 
-    public void register(View v){
+    public void register(){
         String inputUsername = Username2.getText().toString();
         String inputPassword = Password2.getText().toString();
+
         Save(inputUsername, inputPassword);
 
         Intent intent = new Intent(signUp.this, login.class);
         intent.putParcelableArrayListExtra("myData", user);
         startActivity(intent);
-    }
-
-    @Override
-    public void onClick(View v) {
-        if(v.getId() == R.id.loginButton){
-            Intent intent = new Intent(signUp.this, login.class);
-            startActivity(intent);
-        }
     }
 }
