@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         sliderData = new ArrayList<>();
         setData();
         setAdapter();
@@ -72,10 +73,10 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.cart:
-                return true;
+                Intent cartActivity = new Intent(MainActivity.this, Cart.class);
+                startActivity(cartActivity);
+                break;
             case R.id.home:
-                return true;
-            case R.id.wishlist:
                 return true;
             case R.id.transaction:
                 return true;

@@ -61,6 +61,7 @@
             android:src="@drawable/star"></ImageView>
 
         <TextView
+            android:id="@+id/productPriceDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Rp 100.000"
@@ -80,6 +81,7 @@
         android:textSize="20dp"></TextView>
 
     <Button
+        android:id="@+id/addToCartButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add To Cart"

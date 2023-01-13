@@ -13,7 +13,7 @@ import android.view.MenuItem;
 
 import java.util.ArrayList;
 
-public class ShopActivity extends AppCompatActivity {
+public class ShopActivity extends AppCompatActivity  {
 
 
 
@@ -23,7 +23,7 @@ public class ShopActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shop);
         ArrayList<Clothes> clothesList = new ArrayList<>();
         clothesList.add(new Clothes("Red Shirt", "ERIGO", "1000", R.drawable.red_shirts));
-        clothesList.add(new Clothes("Red Shirt2", "ERIGO", "1000", R.drawable.red_shirts));
+        clothesList.add(new Clothes("Red Shirt2", "ERIGOS", "2000", R.drawable.red_shirts));
         clothesList.add(new Clothes("Red Shirt3", "ERIGO", "1000", R.drawable.red_shirts));
         clothesList.add(new Clothes("Red Shirt4", "ERIGO", "1000", R.drawable.red_shirts));
         clothesList.add(new Clothes("Red Shirt5", "ERIGO", "1000", R.drawable.red_shirts));
@@ -55,13 +55,13 @@ public class ShopActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.cart:
+                Intent cartActivity = new Intent(ShopActivity.this, Cart.class);
+                startActivity(cartActivity);
                 return true;
             case R.id.home:
                 Intent homeActitivy = new Intent(ShopActivity.this, MainActivity.class);
                 startActivity(homeActitivy);
                 break;
-            case R.id.wishlist:
-                return true;
             case R.id.transaction:
                 return true;
             case R.id.shop:
@@ -71,4 +71,5 @@ public class ShopActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

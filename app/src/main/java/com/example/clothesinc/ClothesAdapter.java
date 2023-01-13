@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class ClothesAdapter extends RecyclerView.Adapter<ClothesViewHolder> {
 
     ArrayList<Clothes> clothesList = new ArrayList<>();
+
     public ClothesAdapter(ArrayList<Clothes> clothesList){
         this.clothesList = clothesList;
     }
@@ -27,6 +28,7 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ClothesViewHolder holder, int position) {
+        holder.clothes = clothesList.get(position);
         holder.clothesNameView.setText(clothesList.get(position).getClothesTitle());
         holder.clothesBrandView.setText(clothesList.get(position).getClothesBrand());
         holder.clothesPriceView.setText(clothesList.get(position).getClothesPrice());
@@ -38,4 +40,7 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesViewHolder> {
     public int getItemCount() {
         return clothesList.size();
     }
+
+
+
 }

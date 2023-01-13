@@ -11,10 +11,6 @@
         android:title="Home"
         app:showAsAction="never"/>
     <item
-        android:id="@+id/wishlist"
-        android:title="Wishlist"
-        app:showAsAction="never"/>
-    <item
         android:id="@+id/transaction"
         android:title="Transaction"
         app:showAsAction="never"/>
