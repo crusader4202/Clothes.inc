@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -29,6 +30,7 @@ public class signUp extends AppCompatActivity implements View.OnClickListener{
         SignUp = (Button) findViewById(R.id.signUpButton);
 
         SignUp.setOnClickListener(this);
+        Login.setOnClickListener(this);
     }
 
     @Override
@@ -51,10 +53,20 @@ public class signUp extends AppCompatActivity implements View.OnClickListener{
         String inputUsername = Username2.getText().toString();
         String inputPassword = Password2.getText().toString();
 
-        Save(inputUsername, inputPassword);
 
-        Intent intent = new Intent(signUp.this, login.class);
-        intent.putParcelableArrayListExtra("myData", user);
-        startActivity(intent);
+
+        if(inputUsername.isEmpty() || inputPassword.isEmpty()){
+            Toast.makeText(signUp.this, "Please Enter your username & password",
+                    Toast.LENGTH_SHORT).show();
+        } else if(inputUsername.length() < 8 || inputPassword.length() < 1 || inputPassword.length() > 8){
+            Toast.makeText(signUp.this, "Your Input doesn't met the requirements",
+                    Toast.LENGTH_SHORT).show();
+        } else{
+            Save(inputUsername, inputPassword);
+
+            Intent intent = new Intent(signUp.this, login.class);
+            intent.putParcelableArrayListExtra("myData", user);
+            startActivity(intent);
+        }
     }
 }
