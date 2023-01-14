@@ -45,6 +45,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/clothesImgView"
                 android:layout_marginBottom="4dp"
+                android:textSize="16dp"
                 />
 
             <TextView
@@ -54,6 +55,8 @@
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/clothesNameView"
                 android:layout_marginBottom="10dp"
+                android:textColor="#FA9602"
+                android:textStyle="bold"
                 android:text="TextView"
                 />
             <TextView
@@ -62,7 +65,9 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/clothesBrandView"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textStyle="bold"
+                />
 
 
         </RelativeLayout>

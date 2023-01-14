@@ -23,17 +23,18 @@ public class ShopActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_shop);
         ArrayList<Clothes> clothesList = new ArrayList<>();
         clothesList.add(new Clothes("Red Shirt", "ERIGO", "1000", R.drawable.red_shirts));
-        clothesList.add(new Clothes("Red Shirt2", "ERIGOS", "2000", R.drawable.red_shirts));
-        clothesList.add(new Clothes("Red Shirt3", "ERIGO", "1000", R.drawable.red_shirts));
-        clothesList.add(new Clothes("Red Shirt4", "ERIGO", "1000", R.drawable.red_shirts));
-        clothesList.add(new Clothes("Red Shirt5", "ERIGO", "1000", R.drawable.red_shirts));
-        clothesList.add(new Clothes("Red Shirt6", "ERIGO", "1000", R.drawable.red_shirts));
-        clothesList.add(new Clothes("Red Shirt7", "ERIGO", "1000", R.drawable.red_shirts));
-        clothesList.add(new Clothes("Red Shirt8", "ERIGO", "1000", R.drawable.red_shirts));
-        clothesList.add(new Clothes("Red Shirt9", "ERIGO", "1000", R.drawable.red_shirts));
-        clothesList.add(new Clothes("Red Shirt10", "ERIGO", "1000", R.drawable.red_shirts));
-        clothesList.add(new Clothes("Red Shirt11", "ERIGO", "1000", R.drawable.red_shirts));
-//
+        clothesList.add(new Clothes("Ocean Long Sleeve", "Nevada", "5000", R.drawable.blue_long_sleeve));
+        clothesList.add(new Clothes("White Shirt", "Nevada", "3000", R.drawable.white_shirt));
+        clothesList.add(new Clothes("NBA Polo Shirt", "Uniqlo", "1500", R.drawable.nba_polo));
+        clothesList.add(new Clothes("Maroon Polo", "Chanel", "6000", R.drawable.polo_maroon));
+        clothesList.add(new Clothes("Security Black", "Uniqlo", "5400", R.drawable.security_polo));
+        clothesList.add(new Clothes("Red Tennis Polo", "Chanel", "2200", R.drawable.red_tennis_polo));
+        clothesList.add(new Clothes("Green Mix Polo", "Levi's", "3500", R.drawable.green_mix_polo));
+        clothesList.add(new Clothes("Moonchild Shirt", "Levi's", "4400", R.drawable.moonchild_shirt));
+        clothesList.add(new Clothes("Onyx Long Sleeve", "Balenciaga", "9000", R.drawable.onyx_long_sleeve));
+        clothesList.add(new Clothes("Collar Woman Polo", "Balenciaga", "8000", R.drawable.collar_tennis_polo));
+        clothesList.add(new Clothes("Sparty Sleeve", "Duke", "9500", R.drawable.sparty_sleeve));
+
 //
 //
         RecyclerView shopList = findViewById(R.id.shopList);
