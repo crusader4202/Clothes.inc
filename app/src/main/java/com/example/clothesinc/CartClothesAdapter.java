@@ -11,10 +11,10 @@ import java.util.ArrayList;
 
 public class CartClothesAdapter extends RecyclerView.Adapter<CartClothesViewHolder> {
 
-    ArrayList<CartClothes> cartClothes = new ArrayList<>();
+    ArrayList<CartClothes> cartClothes;
 
-    public CartClothesAdapter(ArrayList<CartClothes> cartClothes) {
-        this.cartClothes = cartClothes;
+    public CartClothesAdapter() {
+        this.cartClothes = new ArrayList<>();
     }
 
     @NonNull
@@ -40,5 +40,10 @@ public class CartClothesAdapter extends RecyclerView.Adapter<CartClothesViewHold
     @Override
     public int getItemCount() {
         return cartClothes.size();
+    }
+
+    public void addClothes(ArrayList<CartClothes> cartClothesList) {
+        this.cartClothes = cartClothesList;
+        notifyDataSetChanged();
     }
 }

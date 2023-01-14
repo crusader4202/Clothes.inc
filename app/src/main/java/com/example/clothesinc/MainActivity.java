@@ -85,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(shopActivity);
                 break;
             case R.id.settings:
+//                Intent settingsActivity = new Intent(MainActivity.this, nama class);
+//                StartActivity(settingsActivity);
                 return true;
         }
         return super.onOptionsItemSelected(item);

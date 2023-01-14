@@ -48,7 +48,9 @@
         android:text="All"
         android:onClick="categoryAll"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/recyclerViewImageSlider" />
+        android:layout_below="@+id/recyclerViewImageSlider"
+        android:layout_toLeftOf="@id/button_man"
+        />
     <Button
         android:id="@+id/button_man"
         android:layout_width="wrap_content"
@@ -57,7 +59,9 @@
         android:onClick="categoryMan"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/recyclerViewImageSlider"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="20dp"
+        />
     <Button
         android:id="@+id/button_women"
         android:layout_width="wrap_content"
@@ -66,7 +70,7 @@
         android:onClick="categoryWoman"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/recyclerViewImageSlider"
-        android:layout_alignParentRight="true"/>
+        android:layout_toRightOf="@id/button_man"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/productCard"

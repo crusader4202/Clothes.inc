@@ -24,7 +24,9 @@
         android:layout_below="@id/cartRecycler"
         android:layout_marginTop="10dp"
         android:layout_alignParentLeft="true"
-        android:textSize="20dp"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
 
         />
 
@@ -32,13 +34,53 @@
         android:id="@+id/totalPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="60000"
         android:layout_alignRight="@id/totalPriceText"
         android:layout_alignParentRight="true"
         android:layout_below="@id/cartRecycler"
         android:layout_marginTop="10dp"
-        android:textSize="20dp"
-        android:textColor="@color/teal_200"
+        android:textSize="25dp"
+        android:textColor="#FA9602"
+        android:textStyle="bold"
+
         />
+
+    <TextView
+        android:id="@+id/pengiriman"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pengiriman :"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_below="@id/totalPriceText"
+        android:layout_marginVertical="10dp"
+
+        />
+
+    <Spinner
+        android:id="@+id/spinnerPengiriman"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:background="@android:drawable/btn_dropdown"
+        android:layout_below="@id/pengiriman"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="5dp"
+        />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_below="@id/spinnerPengiriman"
+        android:backgroundTint="#FA9602"
+        android:text="Proceed to Checkout"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        />
+
 
 </RelativeLayout>
