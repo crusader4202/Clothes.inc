@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:padding="8dp">
+    android:padding="8dp"
+    android:background="#FFFAF1"
+    >
 
     <SearchView
         android:id="@+id/search_bar"
@@ -100,7 +102,7 @@
                 android:id="@+id/productPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Rp 100.000"
+                android:text="1000"
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:textStyle="bold"></TextView>
@@ -131,7 +133,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/red_shirts">
+                android:src="@drawable/onyx_long_sleeve">
             </ImageView>
 
             <TextView
@@ -140,7 +142,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="25dp"
                 android:textColor="@color/black"
-                android:text="Red Shirts"></TextView>
+                android:text="Onyx Sleeve"></TextView>
 
             <TextView
                 android:id="@+id/productBrand2"
@@ -149,7 +151,7 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="25dp"
-                android:text="ERIGO"></TextView>
+                android:text="Balenciaga"></TextView>
 
             <TextView
                 android:id="@+id/productPrice2"
@@ -158,7 +160,7 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="25dp"
-                android:text="Rp 100.000"></TextView>
+                android:text="9000"></TextView>
 
         </LinearLayout>
 
