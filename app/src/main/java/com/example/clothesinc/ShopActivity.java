@@ -2,6 +2,7 @@ package com.example.clothesinc;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,17 +12,20 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import android.widget.Toast;
+
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class ShopActivity extends AppCompatActivity  {
 
-
-
+    ClothesAdapter clothesAdapter;
+    ArrayList<Clothes> clothesList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
-        ArrayList<Clothes> clothesList = new ArrayList<>();
+        clothesList = new ArrayList<>();
         clothesList.add(new Clothes("Red Shirt", "ERIGO", "1000", R.drawable.red_shirts));
         clothesList.add(new Clothes("Ocean Long Sleeve", "Nevada", "5000", R.drawable.blue_long_sleeve));
         clothesList.add(new Clothes("White Shirt", "Nevada", "3000", R.drawable.white_shirt));
@@ -38,7 +42,7 @@ public class ShopActivity extends AppCompatActivity  {
 //
 //
         RecyclerView shopList = findViewById(R.id.shopList);
-        ClothesAdapter clothesAdapter = new ClothesAdapter(clothesList);
+        clothesAdapter = new ClothesAdapter(clothesList, ShopActivity.this);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         shopList.setLayoutManager(gridLayoutManager);
         shopList.setAdapter(clothesAdapter);
@@ -48,7 +52,25 @@ public class ShopActivity extends AppCompatActivity  {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater= getMenuInflater();
-        inflater.inflate(R.menu.example_menu, menu);
+        inflater.inflate(R.menu.shop_menu, menu);
+
+        MenuItem searchClothes = menu.findItem(R.id.searchClothes);
+
+        SearchView searchView = (SearchView) searchClothes.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                filterClothes(s);
+                return false;
+            }
+        });
+
         return true;
     }
 
@@ -71,6 +93,18 @@ public class ShopActivity extends AppCompatActivity  {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void filterClothes(String s){
+        ArrayList<Clothes> filterClothesList = new ArrayList<>();
+        for(Clothes clothes : clothesList){
+            if(clothes.getClothesTitle().toLowerCase().contains(s.toLowerCase())){
+                filterClothesList.add(clothes);
+            }
+        }
+        if (!filterClothesList.isEmpty()) {
+            clothesAdapter.filterClothes(filterClothesList);
+        }
     }
 
 }

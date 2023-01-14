@@ -1,5 +1,6 @@
 package com.example.clothesinc;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,7 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesViewHolder> {
 
     ArrayList<Clothes> clothesList = new ArrayList<>();
 
-    public ClothesAdapter(ArrayList<Clothes> clothesList){
+    public ClothesAdapter(ArrayList<Clothes> clothesList, Context context){
         this.clothesList = clothesList;
     }
 
@@ -41,6 +42,10 @@ public class ClothesAdapter extends RecyclerView.Adapter<ClothesViewHolder> {
         return clothesList.size();
     }
 
+    public void filterClothes(ArrayList<Clothes> filterClothesList) {
+        this.clothesList = filterClothesList;
+        notifyDataSetChanged();
+    }
 
 
 }

@@ -9,12 +9,21 @@
     android:background="#FFFAF1"
     >
 
-    <SearchView
-        android:id="@+id/search_bar"
+
+    <TextView
+        android:id="@+id/welcome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="16dp"/>
+        android:text="Welcome to Clothes.inc"
+        android:textColor="@color/white"
+        android:background="#FA9602"
+        android:textSize="30dp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:textAlignment="center"
+        ></TextView>
 
 <!--    <ImageView-->
 <!--        android:id="@+id/hero"-->
@@ -28,7 +37,7 @@
         android:id="@+id/recyclerViewImageSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search_bar"
+        android:layout_below="@+id/welcome"
         android:layout_centerHorizontal="true"
         />
 
