@@ -46,6 +46,9 @@ public class settings extends AppCompatActivity implements View.OnClickListener{
             oldUsername.setText(currentUsername);
             oldPassword.setText(currentPassword);
         }
+
+        changeUsername.setOnClickListener(this);
+        changePassword.setOnClickListener(this);
     }
 
     @Override
