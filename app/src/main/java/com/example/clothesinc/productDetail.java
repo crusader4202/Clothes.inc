@@ -44,7 +44,6 @@ public class productDetail extends AppCompatActivity implements Serializable {
                 }else{
                     cartList.add(new CartClothes(new Clothes("Red Shirt", "ERIGO", "1000", R.drawable.red_shirts), 1));
                 }
-                Toast.makeText(productDetail.this, "Add clothes to cart success!!!", Toast.LENGTH_LONG).show();
             }
         });
 
