@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 public class login extends AppCompatActivity implements View.OnClickListener {
@@ -50,7 +52,10 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         for(int idx = 0; idx < user.size(); idx++){
             String UserPassword = user.get(idx).getPassword();
             String UserName = user.get(idx).getUsername();
-            if(valUsername.equals(UserName) && valPassword.equals(UserPassword)){
+            if(valUsername.isEmpty() || valPassword.isEmpty()){
+                Toast.makeText(login.this, "Please Enter your username & password",
+                        Toast.LENGTH_SHORT).show();
+            } else if(valUsername.equals(UserName) && valPassword.equals(UserPassword)){
                 Intent intent = new Intent(login.this, MainActivity.class);
                 startActivity(intent);
             }
