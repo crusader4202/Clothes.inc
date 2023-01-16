@@ -90,6 +90,8 @@ public class ShopActivity extends AppCompatActivity  {
             case R.id.shop:
                 return true;
             case R.id.settings:
+                Intent settingActivity = new Intent(ShopActivity.this, settings.class);
+                startActivity(settingActivity);
                 return true;
         }
         return super.onOptionsItemSelected(item);

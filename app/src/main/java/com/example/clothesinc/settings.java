@@ -1,9 +1,13 @@
 package com.example.clothesinc;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,6 +52,37 @@ public class settings extends AppCompatActivity implements View.OnClickListener{
 
         changeData.setOnClickListener(this);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater= getMenuInflater();
+        inflater.inflate(R.menu.example_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.cart:
+                Intent cartActivity = new Intent(settings.this, Cart.class);
+                startActivity(cartActivity);
+                break;
+            case R.id.home:
+                Intent mainActivity = new Intent(settings.this, MainActivity.class);
+                startActivity(mainActivity);
+                return true;
+            case R.id.transaction:
+                return true;
+            case R.id.shop:
+                Intent shopActivity = new Intent(settings.this, ShopActivity.class);
+                startActivity(shopActivity);
+                break;
+            case R.id.settings:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     @Override
     public void onClick(View v) {
