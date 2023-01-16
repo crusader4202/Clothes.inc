@@ -32,7 +32,7 @@ public class CartClothesAdapter extends RecyclerView.Adapter<CartClothesViewHold
         holder.clothesCartName.setText(cartClothes.get(position).getClothes().getClothesTitle());
         holder.clothesCartBrand.setText(cartClothes.get(position).getClothes().getClothesBrand());
         holder.clothesCartPrice.setText(cartClothes.get(position).getClothes().getClothesPrice());
-        holder.clothesCartQuantity.setText(cartClothes.get(position).getQuantity());
+        holder.clothesCartQuantity.setText(cartClothes.get(position).getQuantity() + "");
         holder.clothesCartImg.setImageResource(cartClothes.get(position).getClothes().getClothesImg());
 
     }
