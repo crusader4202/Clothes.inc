@@ -75,6 +75,8 @@ public class productDetail extends AppCompatActivity implements Serializable {
                 startActivity(shopActivity);
                 break;
             case R.id.settings:
+                Intent settingActivity = new Intent(productDetail.this, settings.class);
+                startActivity(settingActivity);
                 return true;
         }
         return super.onOptionsItemSelected(item);
