@@ -20,8 +20,7 @@ public class settings extends AppCompatActivity implements View.OnClickListener{
     private TextView oldPassword;
     private EditText newPassword;
     private EditText confirmPassword;
-    private Button changeUsername;
-    private Button changePassword;
+    private Button changeData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,48 +31,48 @@ public class settings extends AppCompatActivity implements View.OnClickListener{
         newUsername = (EditText) findViewById(R.id.newUsername);
         oldPassword = (TextView) findViewById(R.id.oldPassword);
         newPassword = (EditText) findViewById(R.id.newPassword);
-//        confirmPassword = (EditText) findViewById(R.id.confirmNewPassword);
-        changeUsername = (Button) findViewById(R.id.changeUsernameBtn);
-        changePassword = (Button) findViewById(R.id.changePasswordBtn);
+        confirmPassword = (EditText) findViewById(R.id.confirmNewPassword);
+        changeData = (Button) findViewById(R.id.changeDataBtn);
 
-        Intent intent = getIntent();
-        user = intent.getParcelableArrayListExtra("myData");
+        user = (ArrayList<User>) getIntent().getSerializableExtra("myData");
 
-        for(int idx = 0; idx < user.size(); idx++){
-            String currentUsername = user.get(idx).getUsername();
-            String currentPassword = user.get(idx).getPassword();
+        if(user != null && !user.isEmpty()){
+            User oldName = user.get(0);
+            String currUsername = oldName.getUsername();
+            oldUsername.setText(currUsername);
 
-            oldUsername.setText(currentUsername);
-            oldPassword.setText(currentPassword);
+            User oldPass = user.get(0);
+            String currPassword = oldPass.getPassword();
+            oldPassword.setText(currPassword);
         }
 
-        changeUsername.setOnClickListener(this);
-        changePassword.setOnClickListener(this);
+        changeData.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == R.id.changeUsernameBtn || v.getId() == R.id.changePasswordBtn){
+        if(v.getId() == R.id.changeDataBtn){
             changeData();
         }
-    }
-
-    private void Save (String Username, String Password){
-        user.add(new User(Username, Password));
     }
 
     public void changeData(){
         String newUsernameInput = newUsername.getText().toString();
         String newPasswordInput = newPassword.getText().toString();
+        String confirmPasswordInput = confirmPassword.getText().toString();
 
         if(newUsernameInput.isEmpty() || newPasswordInput.isEmpty()) {
             Toast.makeText(settings.this, "Please fill the empty form",
                     Toast.LENGTH_SHORT).show();
-        } else{
-            user.clear();
-            Save(newUsernameInput, newPasswordInput);
+        } else if(!newPasswordInput.equals(confirmPasswordInput)){
+            Toast.makeText(settings.this, "Your Password does not match",
+                    Toast.LENGTH_SHORT).show();
+        }
+        else{
+            user.get(0).setUsername(newUsernameInput);
+            user.get(0).setPassword(newPasswordInput);
             Intent intent = new Intent(settings.this, login.class);
-            intent.putParcelableArrayListExtra("myData", user);
+            intent.putExtra("myData", user);
             startActivity(intent);
         }
     }

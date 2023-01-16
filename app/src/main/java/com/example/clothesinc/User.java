@@ -3,7 +3,9 @@ package com.example.clothesinc;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class User implements Parcelable {
+import java.io.Serializable;
+
+public class User implements Serializable {
 
     private String Username;
     private String Password;
@@ -29,31 +31,31 @@ public class User implements Parcelable {
         Password = in.readString();
     }
 
-    public User(String Username, String Password) {
-        this.Username = Username;
-        this.Password = Password;
+    public User(String username, String password) {
+        this.Username = username;
+        this.Password = password;
     }
 
-    public static final Creator<User> CREATOR = new Creator<User>() {
-        @Override
-        public User createFromParcel(Parcel in) {
-            return new User(in);
-        }
+//    public static final Creator<User> CREATOR = new Creator<User>() {
+//        @Override
+//        public User createFromParcel(Parcel in) {
+//            return new User(in);
+//        }
+//
+//        @Override
+//        public User[] newArray(int size) {
+//            return new User[size];
+//        }
+//    };
 
-        @Override
-        public User[] newArray(int size) {
-            return new User[size];
-        }
-    };
+//    @Override
+//    public int describeContents() {
+//        return 0;
+//    }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(Username);
-        dest.writeString(Password);
-    }
+//    @Override
+//    public void writeToParcel(Parcel dest, int flags) {
+//        dest.writeString(Username);
+//        dest.writeString(Password);
+//    }
 }

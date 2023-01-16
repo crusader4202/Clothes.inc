@@ -1,4 +1,6 @@
 package com.example.clothesinc;
+import com.example.clothesinc.User;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,9 +31,12 @@ public class login extends AppCompatActivity implements View.OnClickListener {
         Login = (Button) findViewById(R.id.signInButton);
         Register = (Button) findViewById(R.id.registerButton);
 
-        Intent intent = getIntent();
-        user = intent.getParcelableArrayListExtra("myData");
+//        user = getIntent().getParcelableExtra("user");
+        user = (ArrayList<User>) getIntent().getSerializableExtra("myData");
 
+        if(user == null) {
+            user = new ArrayList<>();
+        }
         Login.setOnClickListener(this);
         Register.setOnClickListener(this);
     }
@@ -49,16 +54,28 @@ public class login extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void validate(String valUsername, String valPassword){
-        for(int idx = 0; idx < user.size(); idx++){
-            String UserPassword = user.get(idx).getPassword();
-            String UserName = user.get(idx).getUsername();
-            if(valUsername.isEmpty() || valPassword.isEmpty()){
-                Toast.makeText(login.this, "Please Enter your username & password",
-                        Toast.LENGTH_SHORT).show();
-            } else if(valUsername.equals(UserName) && valPassword.equals(UserPassword)){
-                Intent intent = new Intent(login.this, MainActivity.class);
-                startActivity(intent);
+        if(valUsername.isEmpty() || valPassword.isEmpty()) {
+            Toast.makeText(login.this, "Please Enter your username & password",
+                    Toast.LENGTH_SHORT).show();
+        }
+        if(user != null && !user.isEmpty()){
+            for(int idx = 0; idx < user.size(); idx++){
+                String UserPassword = user.get(idx).getPassword();
+                String UserName = user.get(idx).getUsername();
+                if(valUsername.isEmpty() || valPassword.isEmpty()){
+                    Toast.makeText(login.this, "Please Enter your username & password",
+                            Toast.LENGTH_SHORT).show();
+                } else if(!valUsername.equals(UserName) && !valPassword.equals(UserPassword)){
+                    Toast.makeText(login.this, "Logon Failed. Please register before signing in",
+                            Toast.LENGTH_SHORT).show();
+                } else if(valUsername.equals(UserName) && valPassword.equals(UserPassword)){
+                    Intent intent = new Intent(login.this, MainActivity.class);
+                    intent.putExtra("myData", user);
+                    startActivity(intent);
+                }
             }
+        }else{
+            Toast.makeText(login.this, "No data found, please register first", Toast.LENGTH_SHORT).show();
         }
     }
 }

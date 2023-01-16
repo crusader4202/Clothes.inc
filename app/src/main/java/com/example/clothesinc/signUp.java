@@ -1,6 +1,9 @@
 package com.example.clothesinc;
+import com.example.clothesinc.User;
+
 
 import androidx.appcompat.app.AppCompatActivity;
+
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -53,8 +56,6 @@ public class signUp extends AppCompatActivity implements View.OnClickListener{
         String inputUsername = Username2.getText().toString();
         String inputPassword = Password2.getText().toString();
 
-
-
         if(inputUsername.isEmpty() || inputPassword.isEmpty()){
             Toast.makeText(signUp.this, "Please Enter your username & password",
                     Toast.LENGTH_SHORT).show();
@@ -63,10 +64,10 @@ public class signUp extends AppCompatActivity implements View.OnClickListener{
                     Toast.LENGTH_SHORT).show();
         } else{
             Save(inputUsername, inputPassword);
-
             Intent intent = new Intent(signUp.this, login.class);
-            intent.putParcelableArrayListExtra("myData", user);
+            intent.putExtra("myData", user);
             startActivity(intent);
+
         }
     }
 }

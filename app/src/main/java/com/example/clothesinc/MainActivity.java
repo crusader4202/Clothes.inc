@@ -13,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -85,7 +86,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(shopActivity);
                 break;
             case R.id.settings:
+                ArrayList<User> user = (ArrayList<User>) getIntent().getSerializableExtra("myData");
                 Intent settingsActivity = new Intent(MainActivity.this, settings.class);
+                settingsActivity.putExtra("myData", user);
                 startActivity(settingsActivity);
                 break;
         }

@@ -15,14 +15,14 @@
         android:layout_margin="20dp"
         android:textSize="40dp"
         android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Change Username"
         android:layout_margin="10dp"
         android:textSize="25dp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textStyle="bold"/>
 
     <TextView
@@ -47,15 +47,6 @@
         android:drawablePadding="20dp"
         android:padding="15dp"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:backgroundTint="#22A39F"
-        android:text="Change username"
-        android:layout_gravity="center"
-        android:textSize="15dp"
-        android:id="@+id/changeUsernameBtn"/>
 
     <View
         android:layout_width="match_parent"
@@ -68,7 +59,7 @@
         android:text="Change Password"
         android:layout_margin="10dp"
         android:textSize="25dp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textStyle="bold"/>
 
     <TextView
@@ -93,26 +84,26 @@
         android:drawablePadding="20dp"
         android:padding="15dp"/>
 
-<!--    <EditText-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:hint="Confirm New Password"-->
-<!--        android:id="@+id/confirmNewPassword"-->
-<!--        android:layout_margin="10dp"-->
-<!--        android:background="@drawable/rounded_background"-->
-<!--        android:textColorHint="@color/white"-->
-<!--        android:textStyle="italic"-->
-<!--        android:drawablePadding="20dp"-->
-<!--        android:padding="15dp"/>-->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirm New Password"
+        android:id="@+id/confirmNewPassword"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_background"
+        android:textColorHint="@color/white"
+        android:textStyle="italic"
+        android:drawablePadding="20dp"
+        android:padding="15dp"/>
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:backgroundTint="#22A39F"
-        android:text="Change Password"
+        android:text="Change Data"
         android:layout_gravity="center"
-        android:textSize="15dp"
-        android:id="@+id/changePasswordBtn"/>
+        android:textSize="25dp"
+        android:id="@+id/changeDataBtn"/>
 
 </LinearLayout>
