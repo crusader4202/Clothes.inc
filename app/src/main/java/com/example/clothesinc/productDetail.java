@@ -41,8 +41,9 @@ public class productDetail extends AppCompatActivity implements Serializable {
                 CartList cartList = CartList.getInstance();
                 if(cartList.checkCartClothesList(clothes)){
                     cartList.addQuantity(clothes);
-                }else{
-                    cartList.add(new CartClothes(new Clothes("Red Shirt", "ERIGO", "1000", R.drawable.red_shirts), 1));
+                }
+                else{
+                    cartList.addClothesList(clothes);
                 }
             }
         });

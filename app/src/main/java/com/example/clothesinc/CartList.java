@@ -23,9 +23,6 @@ public class CartList {
 
     public boolean checkCartClothesList(Clothes clothes){
         int temp = 0;
-        if(this.cartClothesList.isEmpty()){
-            return false;
-        }
         for (CartClothes c : this.cartClothesList) {
             if(c.getClothes().getClothesTitle().equals(clothes.getClothesTitle())){
                 temp = 1;
@@ -45,6 +42,10 @@ public class CartList {
                 break;
             }
         }
+    }
+
+    public void addClothesList(Clothes clothes){
+        cartList.add(new CartClothes(clothes, 1));
     }
     
     public ArrayList<CartClothes> getCartClothesList() {
