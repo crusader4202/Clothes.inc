@@ -69,6 +69,8 @@ public class productDetail extends AppCompatActivity implements Serializable {
                 startActivity(homeActitivy);
                 break;
             case R.id.transaction:
+                Intent transactionActivity = new Intent(productDetail.this, Transaction.class);
+                startActivity(transactionActivity);
                 return true;
             case R.id.shop:
                 Intent shopActivity = new Intent(productDetail.this, ShopActivity.class);

@@ -80,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.home:
                 return true;
             case R.id.transaction:
+                Intent transactionActivity = new Intent(MainActivity.this, Transaction.class);
+                startActivity(transactionActivity);
                 return true;
             case R.id.shop:
                 Intent shopActivity = new Intent(MainActivity.this, ShopActivity.class);

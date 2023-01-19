@@ -72,6 +72,8 @@ public class settings extends AppCompatActivity implements View.OnClickListener{
                 startActivity(mainActivity);
                 return true;
             case R.id.transaction:
+                Intent transactionActivity = new Intent(settings.this, Transaction.class);
+                startActivity(transactionActivity);
                 return true;
             case R.id.shop:
                 Intent shopActivity = new Intent(settings.this, ShopActivity.class);

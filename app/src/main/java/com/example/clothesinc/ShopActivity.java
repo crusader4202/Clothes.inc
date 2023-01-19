@@ -86,6 +86,8 @@ public class ShopActivity extends AppCompatActivity  {
                 startActivity(homeActitivy);
                 break;
             case R.id.transaction:
+                Intent transactionActivity = new Intent(ShopActivity.this, Transaction.class);
+                startActivity(transactionActivity);
                 return true;
             case R.id.shop:
                 return true;
