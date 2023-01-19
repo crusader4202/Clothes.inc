@@ -46,7 +46,6 @@ public class ShopActivity extends AppCompatActivity  {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         shopList.setLayoutManager(gridLayoutManager);
         shopList.setAdapter(clothesAdapter);
-
     }
 
     @Override
